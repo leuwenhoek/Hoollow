@@ -34,9 +34,9 @@ const roles = [
         icon: <Code2 size={32} />,
         title: "Student Builder",
         desc: "I build projects and want visibility",
-        color: "border-[#0F6FFF]",
-        bg: "bg-[#E8F4FF]",
-        accent: "#0F6FFF",
+        color: "border-blue-500/40",
+        bg: "bg-blue-500/10",
+        accent: "#60A5FA",
     },
     {
         id: "founder",
@@ -52,9 +52,9 @@ const roles = [
         icon: <TrendingUp size={32} />,
         title: "Investor",
         desc: "I want to discover early talent and deal flow",
-        color: "border-success",
-        bg: "bg-[#F0FFF4]",
-        accent: "#22C55E",
+        color: "border-green-500/40",
+        bg: "bg-green-500/10",
+        accent: "#4ADE80",
     },
 ];
 
@@ -508,7 +508,7 @@ export default function OnboardingPage() {
                                                             exit={{ scale: 0, opacity: 0 }}
                                                             className="ml-auto"
                                                         >
-                                                            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                                            <div className="w-8 h-8 rounded-full bg-surface-alt flex items-center justify-center shadow-sm">
                                                                 <Check size={18} className="text-text-primary" />
                                                             </div>
                                                         </motion.div>

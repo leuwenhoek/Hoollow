@@ -146,12 +146,12 @@ export default function LaunchpadPage() {
             <Navbar />
             <main>
                 {/* ─── Hero Strip ─── */}
-                <section className="bg-accent py-16 md:py-20">
+                <section className="bg-surface-alt border-b border-border py-16 md:py-20">
                     <div className="max-w-content mx-auto px-6 text-center">
-                        <h1 className="font-display text-[3rem] font-bold text-bg mb-4">
+                        <h1 className="font-display text-[3rem] font-bold text-text-primary mb-4">
                             Launchpad
                         </h1>
-                        <p className="text-lg text-bg/60 mb-8">
+                        <p className="text-lg text-text-secondary mb-8">
                             Vote for the best projects in the next 48 hours.
                         </p>
 
@@ -162,17 +162,17 @@ export default function LaunchpadPage() {
                                 { value: countdown.seconds, label: "Sec" },
                             ].map((unit) => (
                                 <div key={unit.label} className="text-center">
-                                    <div className="bg-white/10 rounded-card px-5 py-3 min-w-[72px]">
-                                        <span className="text-3xl font-bold text-bg tabular-nums">
+                                    <div className="bg-surface/50 rounded-card px-5 py-3 min-w-[72px]">
+                                        <span className="text-3xl font-bold text-text-primary tabular-nums">
                                             {String(unit.value).padStart(2, "0")}
                                         </span>
                                     </div>
-                                    <span className="text-label text-bg/40 mt-2 block">{unit.label}</span>
+                                    <span className="text-label text-text-muted mt-2 block">{unit.label}</span>
                                 </div>
                             ))}
                         </div>
 
-                        <Button variant="white" size="lg" onClick={() => setShowSubmitModal(true)}>
+                        <Button variant="primary" size="lg" onClick={() => setShowSubmitModal(true)}>
                             Submit Your Project
                         </Button>
                     </div>
@@ -352,8 +352,8 @@ export default function LaunchpadPage() {
                                     <p className="text-small font-medium text-text-primary">Open to Collaborate</p>
                                     <p className="text-label text-text-muted">Let others request to join</p>
                                 </div>
-                                <button type="button" onClick={() => setNewProject({ ...newProject, openToCollab: !newProject.openToCollab })} className={`w-12 h-7 rounded-pill relative transition-colors ${newProject.openToCollab ? "bg-success" : "bg-border"}`}>
-                                    <div className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow transition-transform ${newProject.openToCollab ? "translate-x-5" : "translate-x-0.5"}`} />
+                                <button type="button" onClick={() => setNewProject({ ...newProject, openToCollab: !newProject.openToCollab })} className={`w-12 h-6 rounded-full relative transition-colors ${newProject.openToCollab ? "bg-accent" : "bg-surface-alt"}`}>
+                                    <div className={`absolute top-0.5 w-5 h-5 rounded-full bg-text-primary shadow transition-transform ${newProject.openToCollab ? "translate-x-6" : "translate-x-0.5"}`} />
                                 </button>
                             </div>
                             <div className="flex justify-end gap-3 pt-2">

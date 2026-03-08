@@ -16,11 +16,11 @@ const sizeMap = {
 };
 
 const colors = [
-    "bg-[#E8F4FF] text-[#0F6FFF]",
+    "bg-blue-500/10 text-blue-400",
     "bg-premium-soft text-premium",
-    "bg-[#F0FFF4] text-success",
-    "bg-[#FFF4E8] text-[#E67E22]",
-    "bg-[#FEECF0] text-[#E74C3C]",
+    "bg-green-500/10 text-green-400",
+    "bg-orange-500/10 text-orange-400",
+    "bg-red-500/10 text-red-400",
     "bg-surface-alt text-text-primary",
 ];
 

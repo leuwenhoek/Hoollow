@@ -75,10 +75,10 @@ const ROLE_LABEL: Record<string, string> = {
 const ROLE_LEVEL: Record<string, number> = { owner: 4, coowner: 3, manager: 2, member: 1 };
 
 const ROLE_COLORS: Record<string, string> = {
-    owner: "bg-yellow-100 text-yellow-700",
-    coowner: "bg-purple-100 text-purple-700",
-    manager: "bg-blue-100 text-blue-700",
-    member: "bg-gray-100 text-gray-700",
+    owner: "bg-yellow-500/10 text-yellow-500",
+    coowner: "bg-purple-500/10 text-purple-500",
+    manager: "bg-blue-500/10 text-blue-500",
+    member: "bg-surface-alt text-text-secondary",
 };
 
 export default function ClubDetailPage() {
@@ -355,7 +355,7 @@ export default function ClubDetailPage() {
                 {/* Hero header */}
                 <div className="relative" style={{ background: club.gradient }}>
                     <div className="max-w-5xl mx-auto px-4 pt-24 pb-8">
-                        <button onClick={() => router.push("/clubs")} className="inline-flex items-center gap-1 text-white/80 hover:text-white text-small mb-4 transition-colors">
+                        <button onClick={() => router.push("/clubs")} className="inline-flex items-center gap-1 text-white/80 hover:text-text-primary text-small mb-4 transition-colors">
                             <ChevronLeft size={16} /> Back to Clubs
                         </button>
                         <div className="flex items-end justify-between">
@@ -381,16 +381,16 @@ export default function ClubDetailPage() {
                             <div>
                                 {!club.isMember ? (
                                     hasPendingRequest ? (
-                                        <span className="px-6 py-2.5 bg-white/20 text-white rounded-pill font-semibold text-small backdrop-blur-sm">
+                                        <span className="px-6 py-2.5 bg-surface-alt/20 text-text-primary rounded-pill font-semibold text-small backdrop-blur-sm">
                                             Request Pending
                                         </span>
                                     ) : (
-                                        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleJoinLeave} className="px-6 py-2.5 bg-white text-gray-900 rounded-pill font-semibold text-small hover:bg-white/90 transition-colors shadow-lg">
+                                        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleJoinLeave} className="px-6 py-2.5 bg-accent text-accent-inverse rounded-pill font-semibold text-small hover:bg-accent-hover transition-colors shadow-lg">
                                             {club.type === "open" ? "Join Club" : "Request to Join"}
                                         </motion.button>
                                     )
                                 ) : !isOwner ? (
-                                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleJoinLeave} className="px-6 py-2.5 bg-white/20 text-white rounded-pill font-semibold text-small hover:bg-white/30 transition-colors backdrop-blur-sm flex items-center gap-2">
+                                    <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={handleJoinLeave} className="px-6 py-2.5 bg-surface-alt/50 text-text-primary rounded-pill font-semibold text-small hover:bg-surface-alt transition-colors backdrop-blur-sm flex items-center gap-2">
                                         <LogOut size={14} /> Leave
                                     </motion.button>
                                 ) : null}
@@ -532,7 +532,7 @@ export default function ClubDetailPage() {
                                                     <div className="flex-1 min-w-0">
                                                         <p className="text-small font-semibold text-text-primary truncate">{m.user.name}</p>
                                                         <div className="flex items-center gap-2 mt-0.5">
-                                                            <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-pill ${ROLE_COLORS[m.role] || "bg-gray-100 text-gray-700"}`}>
+                                                            <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-pill ${ROLE_COLORS[m.role] || "bg-surface-alt text-text-secondary"}`}>
                                                                 {ROLE_ICON[m.role]} {ROLE_LABEL[m.role] || m.role}
                                                             </span>
                                                             <span className="text-label text-text-muted">{m.user.impactXP} XP</span>

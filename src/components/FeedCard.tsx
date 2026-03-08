@@ -395,9 +395,10 @@ export default function FeedCard({ post, onUpvote, onPostUpdated, className = ""
                                         <p className="text-small font-medium text-text-primary">Open to Collaborate</p>
                                         <p className="text-label text-text-muted">Let others request to collab</p>
                                     </div>
-                                    <motion.button whileTap={{ scale: 0.9 }} onClick={() => setEditCollab(!editCollab)} className={`w-12 h-7 rounded-pill relative transition-colors ${editCollab ? "bg-success" : "bg-border"}`}>
-                                        <motion.div animate={{ x: editCollab ? 20 : 2 }} transition={{ type: "spring", stiffness: 500, damping: 30 }} className="absolute top-0.5 w-6 h-6 rounded-full bg-white shadow" />
-                                    </motion.button>
+                                    <motion.button whileTap={{ scale: 0.9 }} onClick={() => setEditCollab(!editCollab)}>
+                                    <div className={`w-12 h-6 rounded-full transition-colors ${editCollab ? "bg-accent" : "bg-surface-alt"} relative`}>
+                                        <motion.div animate={{ x: editCollab ? 24 : 2 }} transition={{ type: "spring", stiffness: 500, damping: 30 }} className="absolute top-0.5 w-5 h-5 rounded-full bg-text-primary shadow" />
+                                    </div></motion.button>
                                 </div>
                                 <div className="flex justify-end gap-3 pt-2">
                                     <Button variant="ghost" onClick={() => setShowEditModal(false)}>Cancel</Button>

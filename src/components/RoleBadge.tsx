@@ -10,8 +10,8 @@ interface RoleBadgeProps {
 const roleConfig: Record<string, { label: string; bg: string; text: string }> = {
     builder: {
         label: "Student Builder",
-        bg: "bg-[#E8F4FF]",
-        text: "text-[#0F6FFF]",
+        bg: "bg-blue-500/10",
+        text: "text-blue-400",
     },
     founder: {
         label: "Early Founder",
@@ -20,8 +20,8 @@ const roleConfig: Record<string, { label: string; bg: string; text: string }> = 
     },
     investor: {
         label: "Investor",
-        bg: "bg-[#F0FFF4]",
-        text: "text-success",
+        bg: "bg-green-500/10",
+        text: "text-green-400",
     },
 };
 

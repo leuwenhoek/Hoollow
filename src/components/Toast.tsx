@@ -56,11 +56,13 @@ function ToastItem({
             transition={{ duration: 0.2 }}
             className={`pointer-events-auto flex items-start gap-3 px-4 py-3 rounded-xl border shadow-lg ${bgMap[toast.type]}`}
         >
-            {iconMap[toast.type]}
-            <p className="text-sm text-gray-800 flex-1 leading-snug">{toast.message}</p>
+            <div className="flex-1 flex gap-3 text-small pt-0.5">
+                {iconMap[toast.type]}
+                <p className="text-text-primary flex-1 leading-snug">{toast.message}</p>
+            </div>
             <button
                 onClick={onRemove}
-                className="text-gray-400 hover:text-gray-600 transition-colors flex-shrink-0 mt-0.5"
+                className="text-text-muted hover:text-text-primary transition-colors flex-shrink-0 mt-0.5"
             >
                 <X size={14} />
             </button>

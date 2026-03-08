@@ -208,7 +208,7 @@ export default function SuperPage() {
                                         animate={{ opacity: 1, y: 0 }}
                                         className={`rounded-card p-5 ${msg.type === "ai"
                                             ? "bg-premium/10 border border-premium/30"
-                                            : "bg-white/5 border border-white/10"
+                                            : "bg-surface-alt border border-border"
                                             }`}
                                     >
                                         <div className="flex items-center gap-3 mb-3">
@@ -250,9 +250,9 @@ export default function SuperPage() {
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     placeholder="Type a message or ask the AI..."
-                                    className="w-full px-5 py-4 pr-12 bg-white/5 border border-white/10 rounded-card text-small text-white placeholder-white/30 focus:outline-none focus:border-premium/50 transition-colors"
+                                    className="w-full px-5 py-4 pr-12 bg-surface-alt border border-border rounded-card text-small text-text-primary placeholder-text-muted focus:outline-none focus:border-premium/50 transition-colors"
                                 />
-                                <button className="absolute right-4 top-1/2 -translate-y-1/2 text-premium hover:text-white transition-colors">
+                                <button className="absolute right-4 top-1/2 -translate-y-1/2 text-premium hover:text-text-primary transition-colors">
                                     <Send size={18} />
                                 </button>
                             </div>
@@ -260,8 +260,8 @@ export default function SuperPage() {
 
                         {/* Right — Controls */}
                         <aside className="hidden lg:block space-y-4">
-                            <div className="bg-white/5 border border-white/10 rounded-card p-5">
-                                <h3 className="text-label text-white/60 mb-4 uppercase tracking-wider font-semibold flex items-center gap-2">
+                        <div className="bg-surface-alt border border-border rounded-card p-5">
+                                <h3 className="text-label text-text-muted mb-4 uppercase tracking-wider font-semibold flex items-center gap-2">
                                     <Settings size={14} />
                                     Session Settings
                                 </h3>
@@ -281,8 +281,8 @@ export default function SuperPage() {
                                 </div>
                             </div>
 
-                            <div className="bg-white/5 border border-white/10 rounded-card p-5">
-                                <h3 className="text-label text-white/60 mb-4 uppercase tracking-wider font-semibold flex items-center gap-2">
+                        <div className="bg-surface-alt border border-border rounded-card p-5">
+                                <h3 className="text-label text-text-muted mb-4 uppercase tracking-wider font-semibold flex items-center gap-2">
                                     <Users size={14} />
                                     Participants
                                 </h3>

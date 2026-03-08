@@ -445,9 +445,10 @@ export default function FeedPage() {
                                     <button
                                         type="button"
                                         onClick={() => setNewPost({ ...newPost, openToCollab: !newPost.openToCollab })}
-                                        className={`w-12 h-7 rounded-pill relative transition-colors ${newPost.openToCollab ? "bg-success" : "bg-border"}`}
+                                        className={`w-12 h-6 rounded-full transition-colors ${newPost.openToCollab ? "bg-accent" : "bg-surface-alt"
+                                            } relative`}
                                     >
-                                        <div className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow transition-transform ${newPost.openToCollab ? "translate-x-5" : "translate-x-0.5"}`} />
+                                        <div className={`absolute top-0.5 w-5 h-5 rounded-full bg-text-primary shadow transition-transform ${newPost.openToCollab ? "translate-x-6" : "translate-x-0.5"}`} />
                                     </button>
                                 </div>
                                 <div className="flex justify-end gap-3 pt-2">

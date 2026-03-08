@@ -124,8 +124,8 @@ export default function CollabPage() {
                 <div className="max-w-3xl mx-auto px-4 py-8">
                     {/* Header */}
                     <div className="flex items-center gap-3 mb-8">
-                        <div className="w-11 h-11 bg-green-100 rounded-full flex items-center justify-center">
-                            <Users size={22} className="text-green-600" />
+                        <div className="w-11 h-11 bg-accent/20 rounded-full flex items-center justify-center">
+                            <Users size={22} className="text-accent" />
                         </div>
                         <div>
                             <h1 className="text-2xl font-bold text-text-primary font-display">
@@ -252,7 +252,7 @@ export default function CollabPage() {
                                                                 whileTap={{ scale: 0.95 }}
                                                                 disabled={processingId === item.id}
                                                                 onClick={() => handleAction(item.id, "accepted")}
-                                                                className="flex items-center gap-1.5 px-3 py-2 bg-green-100 text-green-700 rounded-btn text-small font-semibold hover:bg-green-200 transition-colors disabled:opacity-50"
+                                                                className="flex items-center gap-1.5 px-3 py-2 bg-green-500/10 text-green-500 rounded-btn text-small font-semibold hover:bg-green-500/20 transition-colors disabled:opacity-50"
                                                             >
                                                                 <Check size={14} /> Accept
                                                             </motion.button>
@@ -261,7 +261,7 @@ export default function CollabPage() {
                                                                 whileTap={{ scale: 0.95 }}
                                                                 disabled={processingId === item.id}
                                                                 onClick={() => handleAction(item.id, "rejected")}
-                                                                className="flex items-center gap-1.5 px-3 py-2 bg-red-50 text-red-500 rounded-btn text-small font-semibold hover:bg-red-100 transition-colors disabled:opacity-50"
+                                                                className="flex items-center gap-1.5 px-3 py-2 bg-red-500/10 text-red-500 rounded-btn text-small font-semibold hover:bg-red-500/20 transition-colors disabled:opacity-50"
                                                             >
                                                                 <X size={14} /> Decline
                                                             </motion.button>

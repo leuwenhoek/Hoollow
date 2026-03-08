@@ -31,7 +31,7 @@ interface ClubCardProps {
 }
 
 const typeBadgeConfig: Record<string, { label: string; bg: string; text: string }> = {
-    open: { label: "Open", bg: "bg-[#F0FFF4]", text: "text-success" },
+    open: { label: "Open", bg: "bg-green-500/10", text: "text-green-400" },
     invite: { label: "Invite Only", bg: "bg-surface-alt", text: "text-text-secondary" },
     application: { label: "Application", bg: "bg-accent", text: "text-accent-inverse" },
 };
@@ -43,7 +43,7 @@ const ROLE_ICON: Record<string, React.ReactNode> = {
     member: <User size={10} className="text-text-muted" />,
 };
 const ROLE_LABEL: Record<string, string> = { owner: "Owner", coowner: "Co-Owner", manager: "Manager", member: "Member" };
-const ROLE_COLORS: Record<string, string> = { owner: "bg-yellow-100 text-yellow-700", coowner: "bg-purple-100 text-purple-700", manager: "bg-blue-100 text-blue-700", member: "bg-gray-100 text-gray-700" };
+const ROLE_COLORS: Record<string, string> = { owner: "bg-yellow-500/10 text-yellow-500", coowner: "bg-purple-500/10 text-purple-500", manager: "bg-blue-500/10 text-blue-500", member: "bg-surface-alt text-text-secondary" };
 
 export default function ClubCard({ club, onJoin, className = "" }: ClubCardProps) {
     const router = useRouter();

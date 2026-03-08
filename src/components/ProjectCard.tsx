@@ -238,8 +238,8 @@ export default function ProjectCard({ project, onUpvote, onUpdated }: ProjectCar
                                         <p className="text-small font-medium text-text-primary">Open to Collaborate</p>
                                         <p className="text-label text-text-muted">Let others request to join</p>
                                     </div>
-                                    <button type="button" onClick={() => setEditCollab(!editCollab)} className={`w-12 h-7 rounded-pill relative transition-colors ${editCollab ? "bg-success" : "bg-border"}`}>
-                                        <div className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow transition-transform ${editCollab ? "translate-x-5" : "translate-x-0.5"}`} />
+                                    <button type="button" onClick={() => setEditCollab(!editCollab)} className={`w-12 h-6 rounded-full relative transition-colors ${editCollab ? "bg-accent" : "bg-surface-alt"}`}>
+                                    <div className={`absolute top-0.5 w-5 h-5 rounded-full bg-text-primary shadow transition-transform ${editCollab ? "translate-x-6" : "translate-x-0.5"}`} />
                                     </button>
                                 </div>
                                 <div className="flex justify-end gap-3 pt-2">

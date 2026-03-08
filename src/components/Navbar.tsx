@@ -68,7 +68,7 @@ export default function Navbar() {
             initial={{ y: -60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className={`sticky top-0 z-50 h-[60px] border-b border-border bg-[rgba(250,249,247,0.92)] backdrop-blur-[12px] transition-shadow duration-300 ${scrolled ? "shadow-sm" : ""}`}
+            className={`sticky top-0 z-50 h-[60px] border-b border-border bg-surface/90 backdrop-blur-md transition-shadow duration-300 ${scrolled ? "shadow-sm" : ""}`}
         >
             <div className="max-w-content mx-auto h-full px-6 flex items-center justify-between">
                 {/* Logo */}

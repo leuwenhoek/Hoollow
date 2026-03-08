@@ -58,6 +58,21 @@ export async function POST(req: Request) {
             data: updateData,
         });
 
+        // Save initial projects from onboarding if any
+        if (body.projects && Array.isArray(body.projects)) {
+            const validProjects = body.projects.filter((p: any) => p.title?.trim() && p.description?.trim());
+            for (const p of validProjects) {
+                await (prisma as any).project.create({
+                    data: {
+                        name: p.title,
+                        description: p.description,
+                        githubUrl: p.link || null,
+                        authorId: user.id
+                    }
+                });
+            }
+        }
+
         return NextResponse.json({ user });
     } catch (error) {
         console.error("Profile update error:", error);

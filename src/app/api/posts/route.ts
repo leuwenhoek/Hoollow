@@ -53,13 +53,13 @@ export async function POST(req: Request) {
 
         const { title, body, tags, isProject, imageUrl, openToCollab } = await req.json();
 
-        if (!title || !body) {
-            return NextResponse.json({ error: "Title and body are required" }, { status: 400 });
+        if (body === undefined || body.trim() === "") {
+            return NextResponse.json({ error: "Body is required" }, { status: 400 });
         }
 
         const post = await prisma.post.create({
             data: {
-                title,
+                title: title || "",
                 body,
                 tags: tags || [],
                 isProject: isProject || false,

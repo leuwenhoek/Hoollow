@@ -601,7 +601,7 @@ export default function ClubDetailPage() {
                                                     <div key={inv.id} className="flex items-center gap-3 p-3 bg-surface border border-border rounded-card">
                                                         <Avatar name={inv.fromUser.name} image={inv.fromUser.image} size="sm" />
                                                         <div className="flex-1">
-                                                            <p className="text-small text-text-primary"><strong>{inv.fromUser.name}</strong> invited you to join <strong>{inv.club?.name}</strong></p>
+                                                            <p className="text-small text-text-primary"><strong>{inv.fromUser.username ? `@${inv.fromUser.username}` : inv.fromUser.name}</strong> invited you to join <strong>{inv.club?.name}</strong></p>
                                                         </div>
                                                         <div className="flex gap-2">
                                                             <button onClick={() => handleRespondInvite(inv.id, "accepted")} className="p-1.5 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition-colors"><Check size={14} /></button>
@@ -627,7 +627,7 @@ export default function ClubDetailPage() {
                                                     <div key={inv.id} className="flex items-center gap-3 p-3 bg-surface border border-border rounded-card">
                                                         <Avatar name={inv.toUser.name} image={inv.toUser.image} size="sm" />
                                                         <div className="flex-1">
-                                                            <p className="text-small font-medium text-text-primary">{inv.toUser.name}</p>
+                                                            <p className="text-small font-medium text-text-primary">{inv.toUser.username ? `@${inv.toUser.username}` : inv.toUser.name}</p>
                                                         </div>
                                                         <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-pill ${inv.status === "pending" ? "bg-yellow-100 text-yellow-700"
                                                             : inv.status === "accepted" ? "bg-green-100 text-green-700"

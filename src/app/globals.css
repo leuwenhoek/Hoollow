@@ -4,21 +4,21 @@
 
 :root {
   /* Color Palette */
-  --color-bg: #FAF9F7;
-  --color-surface: #FFFFFF;
-  --color-surface-alt: #F3F1EE;
-  --color-border: #E8E5E1;
-  --color-text-primary: #0F0F0F;
-  --color-text-secondary: #6B6B6B;
-  --color-text-muted: #A0A0A0;
-  --color-accent: #0F0F0F;
-  --color-accent-hover: #1A1A1A;
-  --color-accent-soft: #F3F1EE;
-  --color-accent-inverse: #FFFFFF;
-  --color-success: #2D9B6F;
-  --color-premium: #7C3AED;
-  --color-premium-soft: #F3EEFF;
-  --color-link: #0F6FFF;
+  --color-bg: #000000;
+  --color-surface: #0a0a0a;
+  --color-surface-alt: #171717;
+  --color-border: #262626;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #737373;
+  --color-accent: #ffffff;
+  --color-accent-hover: #e5e5e5;
+  --color-accent-soft: #262626;
+  --color-accent-inverse: #000000;
+  --color-success: #22c55e;
+  --color-premium: #d946ef;
+  --color-premium-soft: rgba(217, 70, 239, 0.1);
+  --color-link: #d946ef;
 
   /* Spacing */
   --space-1: 8px;

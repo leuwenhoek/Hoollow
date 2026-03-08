@@ -263,9 +263,11 @@ export default function FeedCard({ post, onUpvote, onPostUpdated, className = ""
                     )}
                 </div>
 
-                <Link href={`/feed/${post.id}`} className="block hover:underline decoration-accent/30 underline-offset-2">
-                    <h3 className="text-card-title font-semibold text-text-primary mb-2">{post.title}</h3>
-                </Link>
+                {post.title && (
+                    <Link href={`/feed/${post.id}`} className="block hover:underline decoration-accent/30 underline-offset-2">
+                        <h3 className="text-card-title font-semibold text-text-primary mb-2">{post.title}</h3>
+                    </Link>
+                )}
                 <p className="text-body text-text-secondary mb-4 whitespace-pre-wrap">{post.body}</p>
 
                 {/* Image */}

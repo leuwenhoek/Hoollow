@@ -34,7 +34,7 @@ export default function Button({
         muted:
             "bg-surface-alt text-text-secondary hover:bg-border",
         white:
-            "bg-white text-accent hover:bg-surface-alt hover:-translate-y-[1px] hover:shadow-btn-hover active:translate-y-0",
+            "bg-white text-black hover:bg-surface-alt hover:-translate-y-[1px] hover:shadow-btn-hover active:translate-y-0",
         "white-outline":
             "bg-transparent border-[1.5px] border-white/30 text-white hover:border-white hover:bg-white/10",
     };

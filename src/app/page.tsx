@@ -415,7 +415,7 @@ export default function LandingPage() {
 
         {/* ─── Section 6: For Investors ─── */}
         <motion.section
-          className="py-24 bg-accent"
+          className="py-24 bg-surface"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -424,7 +424,7 @@ export default function LandingPage() {
           <div className="max-w-content mx-auto px-6">
             <motion.h2
               variants={fadeInUp}
-              className="font-display text-section text-bg text-center mb-12"
+              className="font-display text-section text-text-primary text-center mb-12"
             >
               Find talent before anyone else.
             </motion.h2>
@@ -449,17 +449,17 @@ export default function LandingPage() {
                 <motion.div
                   key={i}
                   variants={fadeInUp}
-                  className="border border-white/10 rounded-card p-6"
+                  className="border border-border rounded-card p-6"
                 >
-                  <h3 className="text-card-title font-semibold text-bg mb-2">
+                  <h3 className="text-card-title font-semibold text-text-primary mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-small text-bg/60">{item.desc}</p>
+                  <p className="text-small text-text-secondary">{item.desc}</p>
                 </motion.div>
               ))}
             </motion.div>
             <motion.div variants={fadeInUp} className="text-center">
-              <Button variant="white" size="lg">
+              <Button variant="primary" size="lg">
                 Request Investor Access
               </Button>
             </motion.div>
@@ -522,19 +522,19 @@ export default function LandingPage() {
         </motion.section>
 
         {/* ─── Section 8: CTA Banner ─── */}
-        <section className="py-20 bg-accent">
+        <section className="py-20 bg-surface border-t border-border">
           <div className="max-w-content mx-auto px-6 text-center">
-            <h2 className="font-display text-section text-bg mb-8">
+            <h2 className="font-display text-section text-text-primary mb-8">
               Ready to prove your work?
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/onboarding">
-                <Button variant="white" size="lg">
+                <Button variant="primary" size="lg">
                   Create Your Profile
                 </Button>
               </Link>
               <Link href="/launchpad">
-                <Button variant="white-outline" size="lg">
+                <Button variant="ghost" size="lg">
                   Explore Launchpad
                 </Button>
               </Link>

@@ -16,6 +16,8 @@ import { useSession } from "next-auth/react";
 import Navbar from "@/components/Navbar";
 import Avatar from "@/components/Avatar";
 
+import { useRouter } from "next/navigation";
+
 interface Notification {
     id: string;
     type: string;
@@ -45,6 +47,7 @@ const TYPE_BG: Record<string, string> = {
 
 export default function NotificationsPage() {
     const { data: session } = useSession();
+    const router = useRouter();
     const [notifications, setNotifications] = useState<Notification[]>([]);
     const [unreadCount, setUnreadCount] = useState(0);
     const [loading, setLoading] = useState(true);
@@ -109,6 +112,21 @@ export default function NotificationsPage() {
         return `${days}d`;
     };
 
+    const handleNotificationClick = (notif: Notification) => {
+        if (!notif.read) markRead(notif.id);
+
+        if (notif.type === "upvote" || notif.type === "comment") {
+            if (notif.relatedId) router.push(`/feed/${notif.relatedId}`);
+        } else if (notif.type === "club_invite") {
+            if (notif.relatedId) router.push(`/clubs/${notif.relatedId}`);
+            else router.push(`/clubs`);
+        } else if (notif.type === "collab_request") {
+            router.push("/collab");
+        } else if (notif.type === "message_request" || notif.type === "dm") {
+            router.push("/messages");
+        }
+    };
+
     return (
         <>
             <Navbar />
@@ -169,7 +187,7 @@ export default function NotificationsPage() {
                                     initial={{ opacity: 0, x: -10 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: i * 0.03 }}
-                                    onClick={() => !notif.read && markRead(notif.id)}
+                                    onClick={() => handleNotificationClick(notif)}
                                     className={`flex items-start gap-3 p-4 rounded-card cursor-pointer transition-all ${notif.read
                                             ? "bg-transparent hover:bg-surface-alt"
                                             : "bg-surface border border-border hover:shadow-card-hover"

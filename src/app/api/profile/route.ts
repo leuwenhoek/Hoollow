@@ -12,7 +12,7 @@ export async function POST(req: Request) {
         }
 
         const body = await req.json();
-        const { role, displayName, username, bio, skills, openToCollab } = body;
+        const { role, displayName, username, bio, skills, openToCollab, image } = body;
 
         // Validate required fields
         const errors: Record<string, string> = {};
@@ -51,6 +51,9 @@ export async function POST(req: Request) {
         };
         if (typeof openToCollab === "boolean") {
             updateData.openToCollab = openToCollab;
+        }
+        if (image) {
+            updateData.image = image;
         }
 
         const user = await prisma.user.update({

@@ -22,7 +22,7 @@ export async function GET(req: Request) {
                 },
                 include: {
                     author: {
-                        select: { id: true, name: true, image: true, role: true, impactXP: true }
+                        select: { id: true, name: true, username: true, image: true, role: true, impactXP: true }
                     },
                     _count: { select: { upvotes: true, comments: true } }
                 },

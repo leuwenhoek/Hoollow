@@ -32,7 +32,7 @@ export default function Navbar() {
 
     const userName = session?.user?.name || "User";
     const userXP = session?.user?.impactXP || 0;
-    const profileSlug = session?.user?.id || "me";
+    const profileSlug = session?.user?.username || session?.user?.id || "me";
 
     const fetchUnread = useCallback(async () => {
         if (status !== "authenticated") return;
@@ -152,7 +152,7 @@ export default function Navbar() {
                                                 {searchResults.users.map((user) => (
                                                     <Link
                                                         key={user.id}
-                                                        href={`/profile/${user.id}`}
+                                                    href={`/profile/${user.username || user.id}`}
                                                         className="flex items-center gap-3 px-4 py-2 hover:bg-zinc-800 transition-colors"
                                                         onClick={() => { setShowResults(false); setSearchQuery(""); }}
                                                     >

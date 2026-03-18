@@ -141,7 +141,7 @@ export default function ProfilePage({ params }: { params: { username: string } }
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
     const userId = params.username;
-    const isOwnProfile = session?.user?.id === userId;
+    const isOwnProfile = (session?.user?.username === userId) || (session?.user?.id === user?.id && user !== null);
 
     const fetchProfile = async () => {
         try {

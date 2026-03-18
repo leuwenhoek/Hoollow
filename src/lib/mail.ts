@@ -16,8 +16,8 @@ export async function sendDeletionEmail(email: string, deletionDate: Date) {
   });
 
   try {
-    await resend.emails.send({
-      from: 'Hoollow <notifications@hoollow.com>',
+    const result = await resend.emails.send({
+      from: 'Hoollow <onboarding@resend.dev>',
       to: email,
       subject: 'Account Deletion Scheduled',
       html: `
@@ -31,8 +31,10 @@ export async function sendDeletionEmail(email: string, deletionDate: Date) {
         </div>
       `,
     });
-  } catch (error) {
-    console.error('Error sending deletion email:', error);
+    console.log('Deletion email sent successfully:', result);
+  } catch (error: any) {
+    console.error('Error sending deletion email:', error.message || error);
+    if (error.response) console.error('Resend Response:', error.response.data);
   }
 }
 
@@ -45,8 +47,8 @@ export async function sendOTPEmail(email: string, otp: string) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
-    await resend.emails.send({
-      from: 'Hoollow <notifications@hoollow.com>',
+    const result = await resend.emails.send({
+      from: 'Hoollow <onboarding@resend.dev>',
       to: email,
       subject: 'Your Account Deletion OTP',
       html: `
@@ -63,7 +65,9 @@ export async function sendOTPEmail(email: string, otp: string) {
         </div>
       `,
     });
-  } catch (error) {
-    console.error('Error sending OTP email:', error);
+    console.log('OTP email sent successfully:', result);
+  } catch (error: any) {
+    console.error('Error sending OTP email:', error.message || error);
+    if (error.response) console.error('Resend Response:', error.response.data);
   }
 }

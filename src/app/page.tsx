@@ -320,9 +320,9 @@ export default function LandingPage() {
               <motion.div variants={fadeInUp}>
                 <div className="bg-surface border border-border rounded-card p-8 shadow-card">
                   <div className="flex items-center gap-4 mb-6">
-                    <Avatar name="Ayush Kumar" size="xl" />
+                    <Avatar name="Ayush" size="xl" />
                     <div>
-                      <p className="text-xl font-semibold text-text-primary">Ayush Kumar</p>
+                      <p className="text-xl font-semibold text-text-primary">Ayush</p>
                       <RoleBadge role="founder" />
                     </div>
                   </div>
@@ -482,7 +482,7 @@ export default function LandingPage() {
               variants={fadeInUp}
               className="font-display text-section text-text-primary text-center mb-12"
             >
-              Built by 11 teenage innovators.
+              Built by 6 teenage innovators.
             </motion.h2>
 
             {/* Founder Card */}
@@ -491,9 +491,9 @@ export default function LandingPage() {
               className="bg-surface border border-border rounded-card p-8 max-w-lg mx-auto mb-12"
             >
               <div className="flex items-center gap-4 mb-4">
-                <Avatar name="Ayush Kumar" size="xl" />
+                <Avatar name="Ayush" size="xl" />
                 <div>
-                  <h3 className="text-xl font-semibold text-text-primary">Ayush Kumar</h3>
+                  <h3 className="text-xl font-semibold text-text-primary">Ayush</h3>
                   <p className="text-small text-text-secondary">Age 15 · Founder & CEO</p>
                   <RoleBadge role="founder" className="mt-2" />
                 </div>
